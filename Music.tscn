@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d3wgc7btmc18i"]
+
+[ext_resource type="AudioStream" uid="uid://bfpgmxxcsmfuj" path="res://unamed.mp3" id="1_fw6bl"]
+[ext_resource type="Script" uid="uid://dkaio5kmxyjft" path="res://music.gd" id="2_tw4r6"]
+
+[node name="Node2D" type="Node2D" unique_id=1461622785]
+script = ExtResource("2_tw4r6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1759598531]
+stream = ExtResource("1_fw6bl")

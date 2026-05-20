@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dcfi7ilyqhoma"]
+
+[ext_resource type="FontFile" uid="uid://bxbjmdrai260" path="res://Early GameBoy.ttf" id="1_nixot"]
+
+[resource]
+default_font = ExtResource("1_nixot")
+Button/colors/font_color = Color(0, 0, 0, 1)

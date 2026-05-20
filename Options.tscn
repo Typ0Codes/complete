@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b58i57bu4ufsd"]
+
+[ext_resource type="Theme" uid="uid://dcfi7ilyqhoma" path="res://default.tres" id="1_ywiuv"]
+[ext_resource type="Shader" uid="uid://ljnfsny785fm" path="res://crt.gdshader" id="2_2r1l1"]
+[ext_resource type="Script" uid="uid://dbftrci1kt8i5" path="res://Fullscreen.gd" id="3_ywiuv"]
+[ext_resource type="Script" uid="uid://clwqmchfre8pq" path="res://back.gd" id="4_2r1l1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2r1l1"]
+shader = ExtResource("2_2r1l1")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.074000003515
+shader_parameter/corner_soften = 0.0250000011875
+shader_parameter/vignette = 0.314000014915
+shader_parameter/scanline_strength = 0.2370000112575
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 0.130000006175
+shader_parameter/wobble_px = 1.210000057475
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
+
+[node name="Control" type="Control" unique_id=451207011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=612730507]
+modulate = Color(0.5062164, 0.5982515, 0.32806602, 1)
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1151253455]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 46.0
+offset_right = 996.0
+offset_bottom = 171.0
+theme = ExtResource("1_ywiuv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Options"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1346673592]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1457958790]
+material = SubResource("ShaderMaterial_2r1l1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=911524990]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 182.0
+offset_right = 457.00003
+offset_bottom = 210.0
+scale = Vector2(3, 3)
+theme = ExtResource("1_ywiuv")
+text = "Fullscreen"
+script = ExtResource("3_ywiuv")
+
+[node name="Button" type="Button" parent="." unique_id=595611048]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 560.0
+offset_right = 144.0
+offset_bottom = 600.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("1_ywiuv")
+theme_override_font_sizes/font_size = 25
+text = "Back
+"
+script = ExtResource("4_2r1l1")
+
+[connection signal="toggled" from="CheckBox" to="CheckBox" method="_on_toggled"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

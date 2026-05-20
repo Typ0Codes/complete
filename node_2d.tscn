@@ -1,0 +1,220 @@
+[gd_scene format=4 uid="uid://c0qmvc4homy1u"]
+
+[ext_resource type="Script" uid="uid://c4a3iokwsnhh8" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://b48ocv0b2cis7" path="res://art.png" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://udfr5sxv8smu" path="res://player.tscn" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://dql8ashpb1wtd" path="res://label_2.gd" id="4_0hol4"]
+[ext_resource type="FontFile" uid="uid://bxbjmdrai260" path="res://Early GameBoy.ttf" id="4_kdubu"]
+[ext_resource type="Script" uid="uid://b1t84iw0axpeg" path="res://level.gd" id="5_q6r6c"]
+[ext_resource type="Shader" uid="uid://ljnfsny785fm" path="res://crt.gdshader" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://b3xo31vxa3y02" path="res://level_2.gd" id="7_rj586"]
+[ext_resource type="Script" uid="uid://c3r7k24s0legs" path="res://level_3.gd" id="8_hqns4"]
+[ext_resource type="AudioStream" uid="uid://cbuul27ahtwyp" path="res://confirmation_001.ogg" id="9_4d7sh"]
+[ext_resource type="Script" uid="uid://dvy7kbmp8slju" path="res://level_4.gd" id="9_x0ka3"]
+[ext_resource type="AudioStream" uid="uid://iwcilvcpx8ns" path="res://error_003.ogg" id="10_ir8iy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
+texture = ExtResource("1_wtcfe")
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_epypp"]
+sources/3 = SubResource("TileSetAtlasSource_0e48y")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(20, 337)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(209, 55)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ir8iy"]
+shader = ExtResource("7_d21ai")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.074000003515
+shader_parameter/corner_soften = 0.0250000011875
+shader_parameter/vignette = 0.314000014915
+shader_parameter/scanline_strength = 0.2370000112575
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 2.2
+shader_parameter/jitter_px = 0.130000006175
+shader_parameter/wobble_px = 1.210000057475
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
+
+[node name="Node2D" type="Node2D" unique_id=1407875785]
+script = ExtResource("1_epypp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=120289523]
+modulate = Color(0.5062164, 0.5982515, 0.32806602, 1)
+offset_left = -81.0
+offset_top = -326.0
+offset_right = 513.0
+offset_bottom = 40.0
+
+[node name="Gameplay" type="Node2D" parent="." unique_id=1911230753]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Gameplay" unique_id=1574549960]
+tile_map_data = PackedByteArray("AAAAAAAAAwAAAAEAAAD//wAAAwAAAAEAAAD+/wAAAwAAAAEAAAD9/wAAAwAAAAEAAAABAAAAAwAAAAEAAAACAAAAAwAAAAEAAAADAAAAAwAAAAEAAAD8/wAAAwAAAAEAAAAEAAAAAwAAAAEAAAD8//P/AwAAAAEAAAD8//T/AwAAAAEAAAD8//X/AwAAAAEAAAD8//b/AwAAAAEAAAD8//f/AwAAAAEAAAD8//j/AwAAAAEAAAD8//n/AwAAAAEAAAD8//r/AwAAAAEAAAD8//v/AwAAAAEAAAD8//z/AwAAAAEAAAD8//3/AwAAAAEAAAD8//7/AwAAAAEAAAD8////AwAAAAEAAAD9//P/AwAAAAAAAAD9//T/AwAAAAAAAAD9//X/AwAAAAAAAAD9//b/AwAAAAAAAAD9//f/AwAAAAAAAAD9//j/AwAAAAAAAAD9//n/AwAAAAAAAAD9//r/AwAAAAAAAAD9//v/AwAAAAAAAAD9//z/AwAAAAAAAAD9//3/AwAAAAAAAAD9//7/AwAAAAAAAAD9////AwAAAAAAAAD+//P/AwAAAAAAAAD+//T/AwAAAAAAAAD+//X/AwAAAAAAAAD+//b/AwAAAAAAAAD+//f/AwAAAAAAAAD+//j/AwAAAAAAAAD+//n/AwAAAAAAAAD+//r/AwAAAAAAAAD+//v/AwAAAAAAAAD+//z/AwAAAAAAAAD+//3/AwAAAAAAAAD+//7/AwAAAAAAAAD+////AwAAAAAAAAD///P/AwAAAAAAAAD///T/AwAAAAAAAAD///X/AwAAAAAAAAD///b/AwAAAAAAAAD///f/AwAAAAAAAAD///j/AwAAAAAAAAD///n/AwAAAAAAAAD///r/AwAAAAAAAAD///v/AwAAAAAAAAD///z/AwAAAAAAAAD///3/AwAAAAAAAAD///7/AwAAAAAAAAD/////AwAAAAAAAAAAAPP/AwAAAAAAAAAAAPT/AwAAAAAAAAAAAPX/AwAAAAAAAAAAAPb/AwAAAAAAAAAAAPf/AwAAAAAAAAAAAPj/AwAAAAAAAAAAAPn/AwAAAAAAAAAAAPr/AwAAAAAAAAAAAPv/AwAAAAAAAAAAAPz/AwAAAAAAAAAAAP3/AwAAAAAAAAAAAP7/AwAAAAAAAAAAAP//AwAAAAAAAAABAPP/AwAAAAAAAAABAPT/AwAAAAAAAAABAPX/AwAAAAAAAAABAPb/AwAAAAAAAAABAPf/AwAAAAAAAAABAPj/AwAAAAAAAAABAPn/AwAAAAAAAAABAPr/AwAAAAAAAAABAPv/AwAAAAAAAAABAPz/AwAAAAAAAAABAP3/AwAAAAAAAAABAP7/AwAAAAAAAAABAP//AwAAAAAAAAACAPP/AwAAAAAAAAACAPT/AwAAAAAAAAACAPX/AwAAAAAAAAACAPb/AwAAAAAAAAACAPf/AwAAAAAAAAACAPj/AwAAAAAAAAACAPn/AwAAAAAAAAACAPr/AwAAAAAAAAACAPv/AwAAAAAAAAACAPz/AwAAAAAAAAACAP3/AwAAAAAAAAACAP7/AwAAAAAAAAACAP//AwAAAAAAAAADAPP/AwAAAAAAAAADAPT/AwAAAAAAAAADAPX/AwAAAAAAAAADAPb/AwAAAAAAAAADAPf/AwAAAAAAAAADAPj/AwAAAAAAAAADAPn/AwAAAAAAAAADAPr/AwAAAAAAAAADAPv/AwAAAAAAAAADAPz/AwAAAAAAAAADAP3/AwAAAAAAAAADAP7/AwAAAAAAAAADAP//AwAAAAAAAAAEAPP/AwAAAAAAAAAEAPT/AwAAAAAAAAAEAPX/AwAAAAAAAAAEAPb/AwAAAAAAAAAEAPf/AwAAAAAAAAAEAPj/AwAAAAAAAAAEAPn/AwAAAAAAAAAEAPr/AwAAAAAAAAAEAPv/AwAAAAAAAAAEAPz/AwAAAAAAAAAEAP3/AwAAAAAAAAAEAP7/AwAAAAAAAAAEAP//AwAAAAAAAAAFAPP/AwAAAAAAAAAFAPT/AwAAAAAAAAAFAPX/AwAAAAAAAAAFAPb/AwAAAAAAAAAFAPf/AwAAAAAAAAAFAPj/AwAAAAAAAAAFAPn/AwAAAAAAAAAFAPr/AwAAAAAAAAAFAPv/AwAAAAAAAAAFAPz/AwAAAAAAAAAFAP3/AwAAAAAAAAAFAP7/AwAAAAAAAAAFAP//AwAAAAAAAAAFAAAAAwAAAAEAAAD8/+7/AwAAAAEAAAD8/+//AwAAAAEAAAD8//D/AwAAAAEAAAD8//H/AwAAAAEAAAD8//L/AwAAAAEAAAD9/+7/AwAAAAAAAAD9/+//AwAAAAAAAAD9//D/AwAAAAAAAAD9//H/AwAAAAAAAAD9//L/AwAAAAAAAAD+/+7/AwAAAAAAAAD+/+//AwAAAAAAAAD+//D/AwAAAAAAAAD+//H/AwAAAAAAAAD+//L/AwAAAAAAAAD//+7/AwAAAAAAAAD//+//AwAAAAAAAAD///D/AwAAAAAAAAD///H/AwAAAAAAAAD///L/AwAAAAAAAAAAAO7/AwAAAAAAAAAAAO//AwAAAAAAAAAAAPD/AwAAAAAAAAAAAPH/AwAAAAAAAAAAAPL/AwAAAAAAAAABAO7/AwAAAAAAAAABAO//AwAAAAAAAAABAPD/AwAAAAAAAAABAPH/AwAAAAAAAAABAPL/AwAAAAAAAAACAO7/AwAAAAAAAAACAO//AwAAAAAAAAACAPD/AwAAAAAAAAACAPH/AwAAAAAAAAACAPL/AwAAAAAAAAADAO7/AwAAAAAAAAADAO//AwAAAAAAAAADAPD/AwAAAAAAAAADAPH/AwAAAAAAAAADAPL/AwAAAAAAAAAEAO7/AwAAAAAAAAAEAO//AwAAAAAAAAAEAPD/AwAAAAAAAAAEAPH/AwAAAAAAAAAEAPL/AwAAAAAAAAAFAO7/AwAAAAAAAAAFAO//AwAAAAAAAAAFAPD/AwAAAAAAAAAFAPH/AwAAAAAAAAAFAPL/AwAAAAAAAAAGAO7/AwAAAAAAAAAGAO//AwAAAAAAAAAGAPD/AwAAAAAAAAAGAPH/AwAAAAAAAAAGAPL/AwAAAAAAAAAGAPP/AwAAAAAAAAAGAPT/AwAAAAAAAAAGAPX/AwAAAAAAAAAGAPb/AwAAAAAAAAAGAPf/AwAAAAAAAAAGAPj/AwAAAAAAAAAGAPn/AwAAAAAAAAAGAPr/AwAAAAAAAAAGAPv/AwAAAAAAAAAGAPz/AwAAAAAAAAAGAP3/AwAAAAAAAAAGAP7/AwAAAAAAAAAGAP//AwAAAAAAAAAGAAAAAwAAAAEAAAAHAO7/AwAAAAAAAAAHAO//AwAAAAAAAAAHAPD/AwAAAAAAAAAHAPH/AwAAAAAAAAAHAPL/AwAAAAAAAAAHAPP/AwAAAAAAAAAHAPT/AwAAAAAAAAAHAPX/AwAAAAAAAAAHAPb/AwAAAAAAAAAHAPf/AwAAAAAAAAAHAPj/AwAAAAAAAAAHAPn/AwAAAAAAAAAHAPr/AwAAAAAAAAAHAPv/AwAAAAAAAAAHAPz/AwAAAAAAAAAHAP3/AwAAAAAAAAAHAP7/AwAAAAAAAAAHAP//AwAAAAAAAAAHAAAAAwAAAAEAAAAIAO7/AwAAAAEAAAAIAO//AwAAAAEAAAAIAPD/AwAAAAEAAAAIAPH/AwAAAAEAAAAIAPL/AwAAAAEAAAAIAPP/AwAAAAEAAAAIAPT/AwAAAAEAAAAIAPX/AwAAAAEAAAAIAPb/AwAAAAEAAAAIAPf/AwAAAAEAAAAIAPj/AwAAAAEAAAAIAPn/AwAAAAEAAAAIAPr/AwAAAAEAAAAIAPv/AwAAAAEAAAAIAPz/AwAAAAEAAAAIAP3/AwAAAAEAAAAIAP7/AwAAAAEAAAAIAP//AwAAAAEAAAAIAAAAAwAAAAEAAAA=")
+tile_set = SubResource("TileSet_epypp")
+
+[node name="Player" parent="Gameplay" unique_id=236765385 instance=ExtResource("2_0e48y")]
+position = Vector2(45, -6)
+
+[node name="Camera2D" type="Camera2D" parent="Gameplay" unique_id=1035230979]
+position = Vector2(216, -135)
+zoom = Vector2(2, 2)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Gameplay" unique_id=1894965942 groups=["Barriers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/StaticBody2D2" unique_id=1212641248]
+position = Vector2(-59, -150.5)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Gameplay/StaticBody2D2" unique_id=1476530625 groups=["Barriers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/StaticBody2D2/StaticBody2D2" unique_id=1373236513]
+position = Vector2(138, -152)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gameplay" unique_id=1314174012 groups=["Barriers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/StaticBody2D" unique_id=117359877]
+position = Vector2(39.5, -314.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Gameplay/StaticBody2D" unique_id=83882412 groups=["Barriers"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gameplay/StaticBody2D/StaticBody2D" unique_id=426611812]
+position = Vector2(40, 30)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Ui" type="Control" parent="." unique_id=1378598355]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title" type="Label" parent="Ui" unique_id=1010870723]
+layout_mode = 0
+offset_left = 221.0
+offset_top = -276.0
+offset_right = 421.0
+offset_bottom = -244.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 25
+text = "Complete"
+
+[node name="score" type="Label" parent="Ui" unique_id=977000644]
+layout_mode = 0
+offset_left = 185.0
+offset_top = -231.0
+offset_right = 335.0
+offset_bottom = -199.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 25
+text = "Score:"
+script = ExtResource("4_0hol4")
+
+[node name="Gameover" type="Label" parent="Ui" unique_id=1226228586]
+layout_mode = 0
+offset_left = 175.0
+offset_top = -97.0
+offset_right = 508.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 35
+text = "Game Over"
+
+[node name="gameover2" type="Label" parent="Ui/Gameover" unique_id=1348836179]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 42.0
+offset_right = 251.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+text = "Press any key
+to restart"
+horizontal_alignment = 1
+
+[node name="level" type="Label" parent="Ui" unique_id=1981060289]
+layout_mode = 0
+offset_left = 185.0
+offset_top = -209.0
+offset_right = 335.0
+offset_bottom = -177.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 25
+text = "Level:"
+script = ExtResource("5_q6r6c")
+
+[node name="level2" type="Label" parent="Ui" unique_id=1663872112]
+layout_mode = 0
+offset_left = 185.0
+offset_top = -183.0
+offset_right = 335.0
+offset_bottom = -151.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 25
+text = "Lines:"
+script = ExtResource("7_rj586")
+
+[node name="level3" type="Label" parent="Ui" unique_id=7714703]
+layout_mode = 0
+offset_left = 186.0
+offset_top = -155.0
+offset_right = 389.0
+offset_bottom = -123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 15
+text = "Lines Highscore:"
+script = ExtResource("8_hqns4")
+
+[node name="level4" type="Label" parent="Ui" unique_id=411120540]
+layout_mode = 0
+offset_left = 184.0
+offset_top = -136.0
+offset_right = 387.0
+offset_bottom = -104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_kdubu")
+theme_override_font_sizes/font_size = 15
+text = "Highscore:"
+script = ExtResource("9_x0ka3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2134966952]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1362550127]
+material = SubResource("ShaderMaterial_ir8iy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=253159180]
+stream = ExtResource("9_4d7sh")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=727072244]
+stream = ExtResource("10_ir8iy")

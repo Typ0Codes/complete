@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://c4a3iokwsnhh8" path="res://node_2d.gd" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://b48ocv0b2cis7" path="res://art.png" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://udfr5sxv8smu" path="res://player.tscn" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://dql8ashpb1wtd" path="res://label_2.gd" id="4_0hol4"]
+[ext_resource type="Script" path="res://label_2.gd" id="4_0hol4"]
 [ext_resource type="FontFile" uid="uid://bxbjmdrai260" path="res://Early GameBoy.ttf" id="4_kdubu"]
-[ext_resource type="Script" uid="uid://b1t84iw0axpeg" path="res://level.gd" id="5_q6r6c"]
+[ext_resource type="Script" path="res://level.gd" id="5_q6r6c"]
 [ext_resource type="Shader" uid="uid://ljnfsny785fm" path="res://crt.gdshader" id="7_d21ai"]
-[ext_resource type="Script" uid="uid://b3xo31vxa3y02" path="res://level_2.gd" id="7_rj586"]
+[ext_resource type="Script" path="res://level_2.gd" id="7_rj586"]
 [ext_resource type="Script" uid="uid://c3r7k24s0legs" path="res://level_3.gd" id="8_hqns4"]
 [ext_resource type="AudioStream" uid="uid://cbuul27ahtwyp" path="res://confirmation_001.ogg" id="9_4d7sh"]
 [ext_resource type="Script" uid="uid://dvy7kbmp8slju" path="res://level_4.gd" id="9_x0ka3"]
@@ -129,6 +129,7 @@ text = "Score:"
 script = ExtResource("4_0hol4")
 
 [node name="Gameover" type="Label" parent="Ui" unique_id=1226228586]
+visible = false
 layout_mode = 0
 offset_left = 175.0
 offset_top = -97.0

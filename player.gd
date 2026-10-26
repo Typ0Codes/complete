@@ -9,10 +9,10 @@ func _ready() -> void:
 	add_to_group("Player")
 
 func _process(delta: float):
-	if Input.is_action_just_pressed("Left") and position.x >= -24 :
+	if Input.is_action_pressed("Left") and position.x >= -24 :
 		$AudioStreamPlayer2D.play()
 		position.x -= tile_size
-	elif Input.is_action_just_pressed("Right") and position.x <= 104:
+	elif Input.is_action_pressed("Right") and position.x <= 104:
 		$AudioStreamPlayer2D.play()
 		position.x += tile_size
 	
@@ -25,7 +25,7 @@ func _process(delta: float):
 	position.x = position.x - 8
 	position.y = position.y - 8
 	
-	if Input.is_action_just_pressed("Shoot"):
+	if Input.is_action_pressed("Shoot"):
 		$AudioStreamPlayer2D2.play()
 		var block = block_scene.instantiate()
 		block.position = global_position

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dp3wxrn6vfc4a" path="res://4RTBE6AXBH1dolyOMSUl-6qxzmzxeHxJrpeYJVS5by8.webp" id="3_4eogf"]
 [ext_resource type="Texture2D" uid="uid://bi7yw6qq6rcl2" path="res://icon.svg" id="4_2tlio"]
 [ext_resource type="Texture2D" uid="uid://bqcg5ewmjq8nl" path="res://Pasted image.png" id="5_c87yd"]
-[ext_resource type="PackedScene" uid="uid://p06bp2i7ibd3" path="res://soviet_table_1.tscn" id="6_0vv60"]
+[ext_resource type="PackedScene" uid="uid://cj0cm4tsi3mtp" path="res://soviet_table_1.tscn" id="6_0vv60"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w1htn"]
 load_path = "res://.godot/imported/Box_10-128x128.png-0d2f9e0dbb3e898b61efe6cd3f5937e6.s3tc.ctex"

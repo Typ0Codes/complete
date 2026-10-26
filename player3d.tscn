@@ -15,8 +15,10 @@ shape = SubResource("CapsuleShape3D_onrkg")
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=625680293]
 
 [node name="Label" type="Label" parent="." unique_id=1677423299]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 14.0
+offset_top = 21.0
+offset_right = 281.0
+offset_bottom = 60.0
 theme = ExtResource("2_0o7q3")
 theme_override_font_sizes/font_size = 30
 text = "Ammo: 0/10"
